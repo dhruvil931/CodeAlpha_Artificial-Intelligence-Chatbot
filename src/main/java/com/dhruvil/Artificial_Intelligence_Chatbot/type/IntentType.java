@@ -1,0 +1,15 @@
+package com.dhruvil.Artificial_Intelligence_Chatbot.type;
+
+public enum IntentType {
+    GREETING,
+    COURSE_INFORMATION,
+    ADMISSION_INFORMATION,
+    FEE_INFORMATION,
+    TIMETABLE_INFORMATION,
+    FACULTY_INFORMATION,
+    EXAM_INFORMATION,
+    PLACEMENT_INFORMATION,
+    CONTACT_INFORMATION,
+    EXIT_OPERATION,
+    UNKNOWN
+}

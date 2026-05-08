@@ -1,6 +1,7 @@
 package com.dhruvil.Artificial_Intelligence_Chatbot.service;
 
 import com.dhruvil.Artificial_Intelligence_Chatbot.nlp.IntentClassifier;
+import com.dhruvil.Artificial_Intelligence_Chatbot.type.IntentType;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,13 +11,17 @@ public class ChatService {
     private final IntentClassifier intentClassifier;
 
     public String generateResponse(String input) {
-        String intent = intentClassifier.classifyIntent(input);
+        IntentType intent = intentClassifier.classifyIntent(input);
+
+        if(input == null || input.isBlank()) {
+            return "Please enter a valid message.";
+        }
 
         switch (intent) {
-            case "GREETING":
+            case GREETING:
                 return "Hello! How can I assist you today?";
 
-            case "COURSE_INFORMATION":
+            case COURSE_INFORMATION:
                 return """
                         Our college offers courses in:
                         - Computer Engineering
@@ -26,7 +31,7 @@ public class ChatService {
                         - Electrical Engineering
                         """;
 
-            case "ADMISSION_INFORMATION":
+            case ADMISSION_INFORMATION:
                 return """
                         Admission process:
                         1. Fill online application form
@@ -35,7 +40,7 @@ public class ChatService {
                         4. Attend counseling process
                         """;
 
-            case "FEE_INFORMATION":
+            case FEE_INFORMATION:
                 return """
                         Fee details:
                         - Computer Engineering: ₹85,000/year
@@ -44,7 +49,7 @@ public class ChatService {
                         - Hostel Fees: ₹40,000/year
                         """;
 
-            case "TIMETABLE_INFORMATION":
+            case TIMETABLE_INFORMATION:
                 return """
                         College timings:
                         - Monday to Friday: 9:00 AM to 4:00 PM
@@ -52,7 +57,7 @@ public class ChatService {
                         - Lunch Break: 12:30 PM to 1:15 PM
                         """;
 
-            case "FACULTY_INFORMATION":
+            case FACULTY_INFORMATION:
                 return """
                         Faculty information:
                         - Highly qualified professors
@@ -61,7 +66,7 @@ public class ChatService {
                         - Practical and project-based learning support
                         """;
 
-            case "EXAM_INFORMATION":
+            case EXAM_INFORMATION:
                 return """
                     Exam information:
                     - Mid-sem exams are conducted in September
@@ -70,7 +75,7 @@ public class ChatService {
                     - Results are published on the student portal
                     """;
 
-            case "PLACEMENT_INFORMATION":
+            case PLACEMENT_INFORMATION:
                 return """
                     Placement information:
                     - Top recruiters: TCS, Infosys, Wipro, Accenture
@@ -79,7 +84,7 @@ public class ChatService {
                     - Placement training sessions are conducted regularly
                     """;
 
-            case "CONTACT_INFORMATION":
+            case CONTACT_INFORMATION:
                 return """
                     Contact information:
                     - Phone: +91 9876543210
@@ -88,13 +93,13 @@ public class ChatService {
                     - Office Hours: 9:00 AM to 5:00 PM
                     """;
 
-            case "EXIT_OPERATION":
+            case EXIT_OPERATION:
                 return """
                     Thank you for using the College Assistant Chatbot.
                     Have a great day!
                     """;
 
-            default:
+            case UNKNOWN:
                 return """
                     Sorry, I could not understand your query.
         
@@ -108,6 +113,9 @@ public class ChatService {
                     - Timetable
                     - Contact Information
                     """;
+
+            default:
+                return "Unexpected error";
         }
     }
 }
