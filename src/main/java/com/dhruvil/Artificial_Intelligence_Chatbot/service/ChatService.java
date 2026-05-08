@@ -61,6 +61,15 @@ public class ChatService {
                         - Practical and project-based learning support
                         """;
 
+            case "EXAM_INFORMATION":
+                return """
+                    Exam information:
+                    - Mid-sem exams are conducted in September
+                    - End-sem exams are conducted in December
+                    - Practical exams are scheduled before end-sem exams
+                    - Results are published on the student portal
+                    """;
+
             default:
                 return "Sorry, I didn't understand that.";
         }

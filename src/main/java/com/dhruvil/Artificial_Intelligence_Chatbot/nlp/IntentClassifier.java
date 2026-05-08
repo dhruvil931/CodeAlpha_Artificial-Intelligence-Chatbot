@@ -77,6 +77,20 @@ public class IntentClassifier {
                     "department"
             );
 
+    private final List<String> examKeywords =
+            List.of(
+                    "exam",
+                    "exams",
+                    "test",
+                    "tests",
+                    "midsem",
+                    "endsem",
+                    "practical",
+                    "practicals",
+                    "result",
+                    "results"
+            );
+
     public String classifyIntent(String input) {
         input = input.toLowerCase().trim();
 
@@ -105,6 +119,10 @@ public class IntentClassifier {
 
             if(facultyKeywords.contains(token)) {
                 return "FACULTY_INFORMATION";
+            }
+
+            if(examKeywords.contains(token)) {
+                return "EXAM_INFORMATION";
             }
         }
 
