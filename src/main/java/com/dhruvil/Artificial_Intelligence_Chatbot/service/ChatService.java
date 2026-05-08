@@ -79,6 +79,15 @@ public class ChatService {
                     - Placement training sessions are conducted regularly
                     """;
 
+            case "CONTACT_INFORMATION":
+                return """
+                    Contact information:
+                    - Phone: +91 9876543210
+                    - Email: info@college.edu
+                    - Address: ABC College, Surat, Gujarat
+                    - Office Hours: 9:00 AM to 5:00 PM
+                    """;
+
             default:
                 return "Sorry, I didn't understand that.";
         }

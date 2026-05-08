@@ -107,6 +107,18 @@ public class IntentClassifier {
                     "career"
             );
 
+    private final List<String> contactKeywords =
+            List.of(
+                    "contact",
+                    "contacts",
+                    "phone",
+                    "mobile",
+                    "email",
+                    "address",
+                    "location",
+                    "office"
+            );
+
     public String classifyIntent(String input) {
         input = input.toLowerCase().trim();
 
@@ -143,6 +155,10 @@ public class IntentClassifier {
 
             if(placementKeywords.contains(token)) {
                 return "PLACEMENT_INFORMATION";
+            }
+
+            if(contactKeywords.contains(token)) {
+                return "CONTACT_INFORMATION";
             }
         }
 
