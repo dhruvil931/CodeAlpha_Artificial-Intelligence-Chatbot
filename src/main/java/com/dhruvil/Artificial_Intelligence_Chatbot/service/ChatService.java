@@ -88,6 +88,12 @@ public class ChatService {
                     - Office Hours: 9:00 AM to 5:00 PM
                     """;
 
+            case "EXIT_OPERATION":
+                return """
+                    Thank you for using the College Assistant Chatbot.
+                    Have a great day!
+                    """;
+
             default:
                 return """
                     Sorry, I could not understand your query.

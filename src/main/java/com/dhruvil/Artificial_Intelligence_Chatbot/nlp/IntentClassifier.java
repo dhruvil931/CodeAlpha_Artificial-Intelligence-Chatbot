@@ -119,6 +119,16 @@ public class IntentClassifier {
                     "office"
             );
 
+    private final List<String> exitKeywords =
+            List.of(
+                    "exit",
+                    "quit",
+                    "bye",
+                    "goodbye",
+                    "close",
+                    "stop"
+            );
+
     public String classifyIntent(String input) {
         input = input.toLowerCase().trim();
 
@@ -159,6 +169,10 @@ public class IntentClassifier {
 
             if(contactKeywords.contains(token)) {
                 return "CONTACT_INFORMATION";
+            }
+
+            if(exitKeywords.contains(token)) {
+                return "EXIT_OPERATION";
             }
         }
 
