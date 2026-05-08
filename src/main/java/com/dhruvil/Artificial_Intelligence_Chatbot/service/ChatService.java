@@ -26,6 +26,15 @@ public class ChatService {
                         - Electrical Engineering
                         """;
 
+            case "ADMISSION_INFORMATION":
+                return """
+                        Admission process:
+                        1. Fill online application form
+                        2. Submit required documents
+                        3. Pay registration fees
+                        4. Attend counseling process
+                        """;
+
             default:
                 return "Sorry, I didn't understand that.";
         }

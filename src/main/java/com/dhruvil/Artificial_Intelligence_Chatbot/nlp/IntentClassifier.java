@@ -27,6 +27,16 @@ public class IntentClassifier {
                     "curriculum"
             );
 
+    private final List<String> admissionKeywords =
+            List.of(
+                    "admission",
+                    "admissions",
+                    "apply",
+                    "application",
+                    "enroll",
+                    "enrollment"
+            );
+
     public String classifyIntent(String input) {
         input = input.toLowerCase().trim();
 
@@ -39,6 +49,10 @@ public class IntentClassifier {
 
             if(courseKeywords.contains(token)) {
                 return "COURSE_INFORMATION";
+            }
+
+            if(admissionKeywords.contains(token)) {
+                return "ADMISSION_INFORMATION";
             }
         }
 
