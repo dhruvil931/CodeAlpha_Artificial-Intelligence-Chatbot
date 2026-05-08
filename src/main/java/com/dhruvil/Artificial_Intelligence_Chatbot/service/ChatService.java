@@ -52,6 +52,15 @@ public class ChatService {
                         - Lunch Break: 12:30 PM to 1:15 PM
                         """;
 
+            case "FACULTY_INFORMATION":
+                return """
+                        Faculty information:
+                        - Highly qualified professors
+                        - Experienced teaching staff
+                        - Dedicated HODs for each department
+                        - Practical and project-based learning support
+                        """;
+
             default:
                 return "Sorry, I didn't understand that.";
         }

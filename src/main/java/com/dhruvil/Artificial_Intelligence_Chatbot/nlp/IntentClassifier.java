@@ -64,6 +64,19 @@ public class IntentClassifier {
                     "college time"
             );
 
+    private final List<String> facultyKeywords =
+            List.of(
+                    "faculty",
+                    "faculties",
+                    "teacher",
+                    "teachers",
+                    "professor",
+                    "professors",
+                    "staff",
+                    "hod",
+                    "department"
+            );
+
     public String classifyIntent(String input) {
         input = input.toLowerCase().trim();
 
@@ -88,6 +101,10 @@ public class IntentClassifier {
 
             if(timingKeywords.contains(token)) {
                 return "TIMETABLE_INFORMATION";
+            }
+
+            if(facultyKeywords.contains(token)) {
+                return "FACULTY_INFORMATION";
             }
         }
 
