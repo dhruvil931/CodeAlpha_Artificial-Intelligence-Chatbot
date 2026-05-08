@@ -44,6 +44,14 @@ public class ChatService {
                         - Hostel Fees: ₹40,000/year
                         """;
 
+            case "TIMETABLE_INFORMATION":
+                return """
+                        College timings:
+                        - Monday to Friday: 9:00 AM to 4:00 PM
+                        - Saturday: 9:00 AM to 1:00 PM
+                        - Lunch Break: 12:30 PM to 1:15 PM
+                        """;
+
             default:
                 return "Sorry, I didn't understand that.";
         }

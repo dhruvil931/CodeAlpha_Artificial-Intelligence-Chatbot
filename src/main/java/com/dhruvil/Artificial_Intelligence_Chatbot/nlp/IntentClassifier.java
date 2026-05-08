@@ -50,6 +50,20 @@ public class IntentClassifier {
                     "semester fee"
             );
 
+    private final List<String> timingKeywords =
+            List.of(
+                    "timing",
+                    "timings",
+                    "time",
+                    "schedule",
+                    "timetable",
+                    "lecture",
+                    "lectures",
+                    "class",
+                    "classes",
+                    "college time"
+            );
+
     public String classifyIntent(String input) {
         input = input.toLowerCase().trim();
 
@@ -70,6 +84,10 @@ public class IntentClassifier {
 
             if(feeKeywords.contains(token)) {
                 return "FEE_INFORMATION";
+            }
+
+            if(timingKeywords.contains(token)) {
+                return "TIMETABLE_INFORMATION";
             }
         }
 
