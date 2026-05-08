@@ -89,7 +89,19 @@ public class ChatService {
                     """;
 
             default:
-                return "Sorry, I didn't understand that.";
+                return """
+                    Sorry, I could not understand your query.
+        
+                    You can ask about:
+                    - Admissions
+                    - Courses
+                    - Fees
+                    - Placements
+                    - Faculty
+                    - Exams
+                    - Timetable
+                    - Contact Information
+                    """;
         }
     }
 }
