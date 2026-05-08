@@ -91,6 +91,22 @@ public class IntentClassifier {
                     "results"
             );
 
+    private final List<String> placementKeywords =
+            List.of(
+                    "placement",
+                    "placements",
+                    "job",
+                    "jobs",
+                    "recruitment",
+                    "recruiter",
+                    "recruiters",
+                    "company",
+                    "companies",
+                    "package",
+                    "salary",
+                    "career"
+            );
+
     public String classifyIntent(String input) {
         input = input.toLowerCase().trim();
 
@@ -123,6 +139,10 @@ public class IntentClassifier {
 
             if(examKeywords.contains(token)) {
                 return "EXAM_INFORMATION";
+            }
+
+            if(placementKeywords.contains(token)) {
+                return "PLACEMENT_INFORMATION";
             }
         }
 

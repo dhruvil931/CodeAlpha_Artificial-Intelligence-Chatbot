@@ -70,6 +70,15 @@ public class ChatService {
                     - Results are published on the student portal
                     """;
 
+            case "PLACEMENT_INFORMATION":
+                return """
+                    Placement information:
+                    - Top recruiters: TCS, Infosys, Wipro, Accenture
+                    - Average package: ₹4.5 LPA
+                    - Highest package: ₹12 LPA
+                    - Placement training sessions are conducted regularly
+                    """;
+
             default:
                 return "Sorry, I didn't understand that.";
         }
