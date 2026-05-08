@@ -35,6 +35,15 @@ public class ChatService {
                         4. Attend counseling process
                         """;
 
+            case "FEE_INFORMATION":
+                return """
+                        Fee details:
+                        - Computer Engineering: ₹85,000/year
+                        - IT Engineering: ₹80,000/year
+                        - Mechanical Engineering: ₹75,000/year
+                        - Hostel Fees: ₹40,000/year
+                        """;
+
             default:
                 return "Sorry, I didn't understand that.";
         }

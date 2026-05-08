@@ -34,7 +34,20 @@ public class IntentClassifier {
                     "apply",
                     "application",
                     "enroll",
-                    "enrollment"
+                    "enrollment",
+                    "join",
+                    "college admission",
+                    "register"
+            );
+
+    private final List<String> feeKeywords =
+            List.of(
+                    "fee",
+                    "fees",
+                    "payment",
+                    "tuition",
+                    "cost",
+                    "semester fee"
             );
 
     public String classifyIntent(String input) {
@@ -53,6 +66,10 @@ public class IntentClassifier {
 
             if(admissionKeywords.contains(token)) {
                 return "ADMISSION_INFORMATION";
+            }
+
+            if(feeKeywords.contains(token)) {
+                return "FEE_INFORMATION";
             }
         }
 
